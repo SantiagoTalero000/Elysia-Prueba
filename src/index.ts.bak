@@ -1,0 +1,20 @@
+import { Elysia } from "elysia";
+import { staticPlugin } from "@elysiajs/static";
+import bcrypt from "bcryptjs";
+import jwt from "jsonwebtoken";
+
+const users: Array<{ username: string; passwordHash: string }> = [];
+
+const app = new Elysia();
+
+// app.use(
+//   staticPlugin({
+//     assets: "./public",
+//     prefix: "/",
+//   })
+// );
+app.get("/", "hola");
+
+app.listen(3000);
+
+console.log(`Servidor Elysia corriendo en http://localhost:3000 🚀`);
